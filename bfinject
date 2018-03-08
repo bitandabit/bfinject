@@ -99,8 +99,8 @@ function clean_up {
         rm -rf "$DYLIB_DIR" >/dev/null 2>&1
     fi
     rm -f "$RANDOM_NAME" > /dev/null 2>&1
-    rm -f /bootstrap/usr/local/bin/bfinject4realz > /dev/null 2>&1
-    rm -f /bootstrap/usr/local/bin/jtool.liberios > /dev/null 2>&1
+    rm -f /usr/local/bin/bfinject4realz > /dev/null 2>&1
+    rm -f /usr/local/bin/jtool.liberios > /dev/null 2>&1
 }
 
 
@@ -130,14 +130,13 @@ fi
 #
 # Detect LiberiOS vs Electra
 #
-if [ -f /bootstrap/inject_criticald ]; then
+if [ -f /electra/inject_criticald ]; then
     # This is Electra
     echo "[+] Electra detected."
-    cp jtool.liberios /bootstrap/usr/local/bin/
-    chmod +x /bootstrap/usr/local/bin/jtool.liberios
-    JTOOL=/bootstrap/usr/local/bin/jtool.liberios
-    cp bfinject4realz /bootstrap/usr/local/bin/
-    INJECTOR=/bootstrap/usr/local/bin/bfinject4realz
+    cp jtool.liberios /usr/local/bin/
+    chmod +x /usr/local/bin/jtool.liberios
+    JTOOL=/usr/local/bin/jtool.liberios
+    INJECTOR=/usr/local/bin/bfinject4realz
 elif [ -f /jb/usr/local/bin/jtool ]; then
     # This is LiberiOS
     echo "[+] Liberios detected"
