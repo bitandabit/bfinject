@@ -136,6 +136,7 @@ if [ -f /electra/inject_criticald ]; then
     cp jtool.liberios /usr/local/bin/
     chmod +x /usr/local/bin/jtool.liberios
     JTOOL=/usr/local/bin/jtool.liberios
+    cp bfinject4realz /usr/local/bin/
     INJECTOR=/usr/local/bin/bfinject4realz
 elif [ -f /jb/usr/local/bin/jtool ]; then
     # This is LiberiOS
